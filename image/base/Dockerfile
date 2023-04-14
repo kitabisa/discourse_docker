@@ -128,6 +128,8 @@ ADD cron /etc/service/cron/run
 ADD rsyslog /etc/service/rsyslog/run
 ADD cron.d_anacron /etc/cron.d/anacron
 
+RUN chown -R discourse /usr/local/lib/ruby/gems/
+
 # Discourse specific bits
 RUN useradd discourse -s /bin/bash -m -U &&\
     mkdir -p /var/www &&\
