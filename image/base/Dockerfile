@@ -128,10 +128,9 @@ ADD cron /etc/service/cron/run
 ADD rsyslog /etc/service/rsyslog/run
 ADD cron.d_anacron /etc/cron.d/anacron
 
-RUN chown -R discourse /usr/local/lib/ruby/gems/
-
 # Discourse specific bits
 RUN useradd discourse -s /bin/bash -m -U &&\
+    chown -R discourse /usr/local/lib/ruby/gems/ &&\
     mkdir -p /var/www &&\
     cd /var/www &&\
     git clone --branch staging --depth 1 https://github.com/kitabisa/discourse-forum-kasanak.git discourse &&\
