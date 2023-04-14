@@ -138,6 +138,6 @@ RUN useradd discourse -s /bin/bash -m -U &&\
     git remote set-branches --add origin tests-passed &&\
     chown -R discourse:discourse /var/www/discourse &&\
     cd /var/www/discourse &&\
-    sudo -u discourse bundle install --deployment --jobs 4 --without test development &&\
+    sudo -u discourse bundle install --verbose --deployment --jobs 4 --without test development &&\
     sudo -u discourse bundle exec rake maxminddb:get &&\
     find /var/www/discourse/vendor/bundle -name tmp -type d -exec rm -rf {} +
