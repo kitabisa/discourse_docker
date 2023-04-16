@@ -1,5 +1,5 @@
 ARG from=kitabisa/discourse-base
-ARG tag=build
+ARG tag=build_slim
 
 FROM $from:$tag
 
