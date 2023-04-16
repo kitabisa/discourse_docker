@@ -31,8 +31,8 @@ jobs:
       - name: tag images
         id: tag-images
         run: |
-          docker tag discourse/base:build_slim kitabisa/discourse-base:slim
-          docker tag discourse/base:build kitabisa/discourse-base:release
+          docker tag kitabisa/discourse-base:build_slim kitabisa/discourse-base:slim
+          docker tag kitabisa/discourse-base:build kitabisa/discourse-base:release
       - name: push to dockerhub
         run: |
           docker push kitabisa/discourse-base:slim
