@@ -1,3 +1,4 @@
+name: Build-Push Discourse
 on: workflow_dispatch
 
 concurrency:
